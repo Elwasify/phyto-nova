@@ -1,0 +1,76 @@
+@import url("https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;500;600;700&family=Inter:wght@300;400;500;600;700&family=Playfair+Display:wght@500;600;700&display=swap");
+@import "tailwindcss";
+
+@theme {
+  --color-navy-950: #15384a;
+  --color-navy-900: #1d4c64;
+  --color-navy-800: #326b80;
+  --color-navy-700: #528b99;
+
+  --color-forest-950: #25473d;
+  --color-forest-900: #3d6555;
+  --color-forest-800: #59806c;
+  --color-forest-700: #587b64;
+  --color-forest-300: #c2d9c5;
+
+  --color-mist-50: #f7faf6;
+  --color-mist-100: #edf3ec;
+  --color-mist-200: #dde8dc;
+  --color-mist-300: #c6d7c7;
+
+  --color-sky-soft: #e7f0f5;
+  --color-paper: #fcfdfb;
+  --color-stone-soft: #f3f6f1;
+  --color-ink: #203631;
+  --color-ink-soft: #60736c;
+  --color-line: #e0e8e0;
+
+  --font-display: "Playfair Display", Georgia, serif;
+  --font-body: "Inter", system-ui, sans-serif;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+section[id] {
+  scroll-margin-top: 4.5rem;
+}
+
+body {
+  margin: 0;
+  background-color: var(--color-paper);
+  color: var(--color-ink);
+  font-family: var(--font-body);
+}
+
+img {
+  display: block;
+  max-width: 100%;
+}
+
+h1,
+h2,
+h3 {
+  text-wrap: balance;
+}
+
+html[lang="ar"] body,
+html[lang="ar"] h1,
+html[lang="ar"] h2,
+html[lang="ar"] h3,
+html[lang="ar"] h4,
+html[lang="ar"] .font-display,
+html[lang="ar"] .font-body {
+  font-family: "Cairo", system-ui, sans-serif;
+}
+
+html[lang="ar"] [class*="tracking-"] {
+  letter-spacing: normal;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+}
