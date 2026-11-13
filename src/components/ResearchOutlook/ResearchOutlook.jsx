@@ -5,9 +5,9 @@ export default function ResearchOutlook() {
   const { t } = useLanguage();
 
   return (
-    <section className="bg-gradient-to-b from-mist-100 to-sky-soft py-16 md:py-20 lg:py-28">
-      <div className="mx-auto flex max-w-3xl flex-col items-center px-5 text-center lg:px-8">
-        <div className="flex h-16 w-16 items-center justify-center rounded-full bg-white text-navy-800 shadow-md shadow-navy-900/10">
+    <section className="surface surface-outlook py-16 md:py-20 lg:py-28">
+      <div className="surface-content mx-auto flex max-w-3xl flex-col items-center px-5 text-center lg:px-8" data-reveal>
+        <div className="flex h-16 w-16 items-center justify-center rounded-full border border-white/70 bg-white/80 text-navy-800 shadow-md shadow-navy-900/10 backdrop-blur-sm">
           <Icon icon="ph:leaf-duotone" width={32} height={32} />
         </div>
 
@@ -18,6 +18,7 @@ export default function ResearchOutlook() {
         <h2 className="mt-4 font-display text-3xl font-medium leading-tight text-navy-900 sm:text-4xl lg:text-5xl">
           {t.outlook.title}
         </h2>
+        <div className="mt-5 h-1 w-16 rounded-full bg-linear-to-r from-forest-700 to-navy-800" />
 
         <p className="mt-6 text-base leading-relaxed text-ink-soft sm:text-lg">
           {t.outlook.description}

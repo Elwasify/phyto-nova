@@ -14,16 +14,18 @@ export default function Hero() {
 
   return (
     <section id="home">
-      <div className="relative isolate overflow-hidden bg-navy-950">
+      <div className="hero-stage">
         <img
           src={heroImage}
           alt={t.hero.imageAlt}
           className="absolute inset-0 -z-20 h-full w-full object-cover rtl:-scale-x-100"
+          fetchPriority="high"
+          decoding="async"
         />
-        <div className="absolute inset-0 -z-10 bg-linear-to-r from-navy-950/95 via-navy-900/80 to-navy-800/40 rtl:bg-linear-to-l" />
+        <div className="hero-overlay absolute inset-0 -z-10" />
 
-        <div className="mx-auto flex min-h-[540px] max-w-7xl flex-col justify-center px-5 py-20 sm:min-h-[600px] sm:py-24 lg:min-h-[640px] lg:px-8">
-          <div className="max-w-3xl">
+        <div className="relative z-10 mx-auto flex min-h-[540px] max-w-7xl flex-col justify-center px-5 py-20 sm:min-h-[600px] sm:py-24 lg:min-h-[640px] lg:px-8">
+          <div className="max-w-3xl" data-reveal>
             <p className="mb-6 text-xs font-semibold uppercase tracking-[0.25em] text-forest-300">
               {t.hero.label}
             </p>
@@ -69,8 +71,8 @@ export default function Hero() {
         </div>
       </div>
 
-      <div className="border-b border-mist-200 bg-mist-100">
-        <div className="mx-auto grid max-w-7xl grid-cols-2 gap-y-6 px-5 py-8 lg:grid-cols-4 lg:px-8">
+      <div className="border-b border-mist-200 bg-stone-soft">
+        <div className="mx-auto grid max-w-7xl grid-cols-2 gap-y-6 px-5 py-8 lg:grid-cols-4 lg:px-8" data-reveal="stagger">
           {disciplineIcons.map((icon, index) => (
             <div
               key={icon}

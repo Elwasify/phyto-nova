@@ -5,8 +5,14 @@ export default function ResearchOverview() {
   const { t } = useLanguage();
 
   return (
-    <section id="about" className="bg-paper py-16 md:py-20 lg:py-28">
-      <div className="mx-auto grid max-w-7xl items-center gap-12 px-5 lg:grid-cols-2 lg:gap-16 lg:px-8">
+    <section
+      id="about"
+      className="surface surface-intro py-16 md:py-20 lg:py-28"
+    >
+      <div
+        className="surface-content mx-auto grid max-w-7xl items-center gap-12 px-5 lg:grid-cols-2 lg:gap-16 lg:px-8"
+        data-reveal
+      >
         <div className="lg:col-start-1">
           <p className="mb-4 text-xs font-semibold uppercase tracking-[0.25em] text-forest-700">
             {t.overview.label}
@@ -15,6 +21,7 @@ export default function ResearchOverview() {
           <h2 className="font-display text-3xl font-medium leading-tight text-navy-900 sm:text-4xl lg:text-5xl">
             {t.overview.title}
           </h2>
+          <div className="mt-5 h-1 w-16 rounded-full bg-linear-to-r from-forest-700 to-navy-800" />
 
           <p className="mt-6 text-base leading-relaxed text-ink-soft sm:text-lg">
             {t.overview.paragraphOne}
@@ -30,11 +37,11 @@ export default function ResearchOverview() {
         </div>
 
         <figure className="lg:col-start-2">
-          <div className="overflow-hidden rounded-2xl shadow-xl shadow-navy-900/15 ring-1 ring-line">
+          <div className="group overflow-hidden rounded-2xl shadow-xl shadow-navy-900/15 ring-1 ring-line">
             <img
               src={heroImage}
               alt={t.overview.imageAlt}
-              className="aspect-4/3 w-full object-cover"
+              className="aspect-4/3 w-full object-cover transition-transform duration-700 group-hover:scale-[1.025]"
             />
           </div>
           <figcaption className="mt-4 flex flex-wrap items-start justify-between gap-2 text-[11px] leading-relaxed text-ink-soft sm:text-xs">

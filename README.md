@@ -2,42 +2,51 @@
 
 **A bilingual academic research website exploring plant tissue culture and its potential role in anticancer drug discovery.**
 
-Phyto Nova presents research themes, scientific references, project resources, and the academic team behind the project. The website is available in English and Arabic, with right-to-left layout support for Arabic.
+🌐 **Live site:** [phyto-nova.vercel.app](https://phyto-nova.vercel.app)
 
-## Research topics
+## Overview
+
+Phyto Nova explores plant tissue culture as a controlled platform for discovering and producing candidate anticancer compounds. It focuses on nano-elicitation as an approach to stimulating secondary-metabolite production, highlights the role of metabolomics in chemical characterization, and covers bioreactors for large-scale production.
+
+By reviewing and connecting findings from different plant-culture studies, including *Viola odorata* and rice callus suspension cultures, the project presents an integrated research pathway linking plant-cell cultivation, nanomaterial-based elicitation, metabolite analysis, and in-vitro anticancer screening.
+
+## Features
+
+- Research themes and scientific references
+- Selected scientific publications
+- Project resources, supervisor and team information, and a research outlook
+- English and Arabic support, with right-to-left (RTL) layout for Arabic
+
+## Research Topics
 
 - Nano-elicitation
 - Secondary-metabolite production
 - Bioreactor scale-up
 - Metabolomics
 
-The website also features selected scientific publications, project resources, supervisor and team information, and a research outlook.
+## Getting Started
 
-## Getting started
-
-### Prerequisites
-
-- Node.js and npm
-
-### Install and run locally
+**Prerequisites:** Node.js and npm
 
 ```bash
+git clone https://github.com/Elwasify/phyto-nova.git
+cd phyto-nova
 npm install
 npm run dev
 ```
 
 Vite will print the local development URL in the terminal.
 
-### Available scripts
+## Available Scripts
 
-| Command | Description |
-| --- | --- |
-| `npm run dev` | Start the local development server |
-| `npm run build` | Create a production build in `dist/` |
+| Command           | Description                          |
+| ----------------- | ------------------------------------ |
+| `npm run dev`     | Start the local development server   |
+| `npm run build`   | Create a production build in `dist/` |
 | `npm run preview` | Preview the production build locally |
-| `npm run lint` | Run ESLint |
+| `npm run lint`    | Run ESLint                           |
 
-## Built with
+## Built With
 
 - React
 - Vite
@@ -45,9 +54,9 @@ Vite will print the local development URL in the terminal.
 - React Router
 - Iconify and Lucide icons
 
-## Project structure
+## Project Structure
 
-```text
+```
 src/
   components/  Page sections and shared UI components
   context/     Language state and language provider
@@ -56,60 +65,15 @@ src/
   assets/      Images used by the website
 ```
 
-## العربية
+## Deployment
 
-**موقع أكاديمي ثنائي اللغة يستكشف زراعة الأنسجة النباتية وإمكاناتها في اكتشاف الأدوية المضادة للسرطان.**
+The site is deployed on [Vercel](https://vercel.com). To deploy your own copy, run `npm run build` and serve the `dist/` folder, or connect the repository to Vercel.
 
-يعرض مشروع فيتو نوفا محاور البحث والمراجع العلمية وموارد المشروع والفريق الأكاديمي. يتوفر الموقع باللغتين العربية والإنجليزية، مع دعم اتجاه الكتابة من اليمين إلى اليسار عند اختيار العربية.
+## Team
 
-## محاور البحث
+- [Name], [Role / Affiliation]
+- Supervisor: [Name]
 
-- التحفيز بالجسيمات النانوية
-- إنتاج المركبات الأيضية الثانوية
-- التوسع في المفاعلات الحيوية
-- علم الأيض (الميتابولوميكس)
+## License
 
-يتضمن الموقع أيضًا مجموعة مختارة من المنشورات العلمية، وموارد المشروع، ومعلومات عن المشرف والفريق، ونظرة مستقبلية للبحث.
-
-## بدء الاستخدام
-
-### المتطلبات
-
-- Node.js وnpm
-
-### التثبيت والتشغيل محليًا
-
-```bash
-npm install
-npm run dev
-```
-
-سيعرض Vite رابط الموقع المحلي في الطرفية.
-
-### الأوامر المتاحة
-
-| الأمر | الوصف |
-| --- | --- |
-| `npm run dev` | تشغيل خادم التطوير المحلي |
-| `npm run build` | إنشاء نسخة الإنتاج داخل المجلد `dist/` |
-| `npm run preview` | معاينة نسخة الإنتاج محليًا |
-| `npm run lint` | تشغيل ESLint |
-
-## التقنيات المستخدمة
-
-- React
-- Vite
-- Tailwind CSS
-- React Router
-- أيقونات Iconify وLucide
-
-## هيكل المشروع
-
-```text
-src/
-  components/  أقسام الصفحات ومكونات واجهة المستخدم المشتركة
-  context/     حالة اللغة ومزوّدها
-  data/        محاور البحث والمنشورات وتفاصيل المشروع
-  i18n/        الترجمات العربية والإنجليزية
-  assets/      الصور المستخدمة في الموقع
-```
+[e.g., MIT]

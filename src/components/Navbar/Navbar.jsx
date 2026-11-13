@@ -6,19 +6,23 @@ import { useLanguage } from "../../context/useLanguage";
 
 export default function Navbar() {
   const [open, setOpen] = useState(false);
-  const { t, toggleLanguage } = useLanguage();
+  const { t, toggleLanguage, language } = useLanguage();
+  const navigation = [
+    ...t.nav,
+    { label: language === "ar" ? "المؤتمر" : "Conference", href: "#conference" },
+  ];
 
   return (
     <header className="sticky top-0 z-50 border-b border-line bg-paper/90 backdrop-blur">
       <div className="mx-auto flex h-16 max-w-7xl items-center justify-between px-4 sm:px-5 lg:px-8">
         <Brand />
 
-        <nav className="hidden items-center gap-8 lg:flex">
-          {t.nav.map((item) => (
+        <nav className="hidden items-center gap-4 lg:flex xl:gap-8">
+          {navigation.map((item) => (
             <a
               key={item.href}
               href={`/${item.href}`}
-              className="text-sm font-medium text-ink-soft transition-colors hover:text-navy-800"
+              className="whitespace-nowrap text-sm font-medium text-ink-soft transition-colors hover:text-navy-800"
             >
               {item.label}
             </a>
@@ -66,7 +70,7 @@ export default function Navbar() {
       {open && (
         <div className="border-t border-line bg-paper lg:hidden">
           <nav id="mobile-navigation" className="mx-auto flex max-w-7xl flex-col gap-1 px-5 py-4">
-            {t.nav.map((item) => (
+            {navigation.map((item) => (
               <a
                 key={item.href}
                 href={`/${item.href}`}

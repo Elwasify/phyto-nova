@@ -23,9 +23,53 @@ export const teamMembers = [
   "Mazen Magdy",
 ];
 
+export const socialLinks = [
+  {
+    label: "Facebook",
+    href: "https://www.facebook.com/share/1Cey6MSJtR/",
+    icon: "simple-icons:facebook",
+  },
+  {
+    label: "Instagram",
+    href: "https://www.instagram.com/fouad8_19",
+    icon: "simple-icons:instagram",
+  },
+  {
+    label: "LinkedIn",
+    href: "https://www.linkedin.com/in/mohamed-fouad-55b1a0301",
+    icon: "simple-icons:linkedin",
+  },
+];
+
+export const shimaaSocialLinks = [
+  {
+    label: "Facebook",
+    href: "https://www.facebook.com/share/1Mh3AScm3k/",
+    icon: "simple-icons:facebook",
+  },
+  {
+    label: "Instagram",
+    href: "https://www.instagram.com/shimaa_tawfiq/",
+    icon: "simple-icons:instagram",
+  },
+  {
+    label: "LinkedIn",
+    href: "https://www.linkedin.com/in/shimaa-tawfiq-929161356/",
+    icon: "simple-icons:linkedin",
+  },
+];
+
 export const presenters = [
-  { name: "ENG. Mohamed Fouad", photo: mohamedFouadPortrait },
-  { name: "ENG. Shimaa Tawfiq", photo: shimaaTawfiqPortrait },
+  {
+    name: "ENG. Mohamed Fouad",
+    photo: mohamedFouadPortrait,
+    socialLinks,
+  },
+  {
+    name: "ENG. Shimaa Tawfiq",
+    photo: shimaaTawfiqPortrait,
+    socialLinks: shimaaSocialLinks,
+  },
 ];
 
 export const areas = [

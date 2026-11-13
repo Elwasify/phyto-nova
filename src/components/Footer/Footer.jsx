@@ -1,6 +1,6 @@
 import { Icon } from "@iconify/react";
 import Brand from "../Brand";
-import { repositoryUrl } from "../../data/researchData";
+import { repositoryUrl, socialLinks } from "../../data/researchData";
 import { useLanguage } from "../../context/useLanguage";
 
 const contacts = [
@@ -21,32 +21,14 @@ const contacts = [
   },
 ];
 
-const socials = [
-  {
-    icon: "ph:facebook-logo-bold",
-    href: "https://www.facebook.com/share/1Cey6MSJtR/",
-    label: "Facebook",
-  },
-  {
-    icon: "ph:instagram-logo-bold",
-    href: "https://www.instagram.com/fouad8_19",
-    label: "Instagram",
-  },
-  {
-    icon: "ph:linkedin-logo-bold",
-    href: "https://www.linkedin.com/in/mohamed-fouad-55b1a0301",
-    label: "LinkedIn",
-  },
-];
-
 export default function Footer() {
   const { t } = useLanguage();
   const links = t.nav.filter((item) => item.href !== "#repository");
 
   return (
-    <footer className="bg-gradient-to-b from-navy-900 to-navy-950 text-white">
-      <div className="mx-auto max-w-7xl px-5 py-12 sm:py-16 lg:px-8">
-        <div className="grid items-start gap-10 sm:grid-cols-2 lg:grid-cols-[1.5fr_1fr_1.3fr_1fr] lg:gap-12">
+    <footer className="site-footer text-white">
+      <div className="relative z-10 mx-auto max-w-7xl px-5 py-12 sm:py-16 lg:px-8">
+        <div className="grid items-start gap-10 sm:grid-cols-2 lg:grid-cols-[1.5fr_1fr_1.3fr_1fr] lg:gap-12" data-reveal="stagger">
           <div className="sm:col-span-2 lg:col-span-1">
             <Brand light />
             <p className="mt-5 max-w-sm text-sm leading-relaxed text-white/70">
@@ -111,13 +93,13 @@ export default function Footer() {
           <div>
             <h3 className="text-lg font-semibold">{t.footer.followUs}</h3>
             <div className="mt-5 flex flex-wrap gap-3">
-              {socials.map((s) => (
+              {socialLinks.map((s) => (
                 <a
                   key={s.label}
                   href={s.href}
                   target="_blank"
                   rel="noopener noreferrer"
-                  aria-label={s.label}
+                  aria-label={`Mohamed Fouad on ${s.label}`}
                   className="flex h-11 w-11 items-center justify-center rounded-full border border-white/15 bg-white/5 transition-colors hover:border-sky-soft hover:text-sky-soft"
                 >
                   <Icon icon={s.icon} width={20} height={20} />

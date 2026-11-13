@@ -6,9 +6,12 @@ export default function Publications() {
   const { t } = useLanguage();
 
   return (
-    <section id="publications" className="bg-paper py-16 md:py-20 lg:py-28">
-      <div className="mx-auto max-w-7xl px-5 lg:px-8">
-        <div className="grid items-end gap-8 lg:grid-cols-2 lg:gap-16">
+    <section
+      id="publications"
+      className="surface surface-publications py-16 md:py-20 lg:py-28"
+    >
+      <div className="surface-content mx-auto max-w-7xl px-5 lg:px-8">
+        <div className="grid items-end gap-8 lg:grid-cols-2 lg:gap-16" data-reveal>
           <div>
             <p className="mb-4 text-xs font-semibold uppercase tracking-[0.25em] text-forest-700">
               {t.publicationsSection.label}
@@ -16,17 +19,18 @@ export default function Publications() {
             <h2 className="font-display text-3xl font-medium leading-tight text-navy-900 sm:text-4xl lg:text-5xl">
               {t.publicationsSection.title}
             </h2>
+            <div className="mt-5 h-1 w-16 rounded-full bg-linear-to-r from-forest-700 to-navy-800" />
           </div>
           <p className="text-base leading-relaxed text-ink-soft sm:text-lg lg:ms-auto lg:max-w-md">
             {t.publicationsSection.description}
           </p>
         </div>
 
-        <div className="mt-10 grid gap-5 sm:mt-14 md:grid-cols-2 md:gap-6">
+        <div className="mt-10 grid gap-5 sm:mt-14 md:grid-cols-2 md:gap-6" data-reveal="stagger">
           {publications.map((publication, index) => (
             <article
               key={publication.slug}
-              className="flex flex-col rounded-2xl border border-line bg-white p-5 transition-all hover:-translate-y-1 hover:border-navy-700/40 hover:shadow-xl hover:shadow-navy-900/10 sm:p-8"
+              className="flex flex-col rounded-2xl border border-line bg-white/90 p-5 backdrop-blur-sm transition-all hover:-translate-y-1 hover:border-navy-700/40 hover:shadow-xl hover:shadow-navy-900/10 sm:p-8"
             >
               <div className="flex flex-wrap items-center justify-between gap-3">
                 <p className="text-[11px] font-semibold uppercase tracking-[0.2em] text-forest-700">
@@ -66,7 +70,7 @@ export default function Publications() {
                   href={publication.url}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="inline-flex items-center gap-2 rounded-full bg-navy-900 px-5 py-2.5 text-sm font-medium text-white transition-colors hover:bg-navy-800"
+                  className="inline-flex items-center gap-2 rounded-full bg-navy-900 px-5 py-2.5 text-sm font-medium text-white transition-all hover:-translate-y-0.5 hover:bg-navy-800 hover:shadow-md focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-navy-900"
                 >
                   {t.publicationsSection.readPublication}
                   <Icon icon="ph:arrow-up-right-bold" width={16} height={16} />

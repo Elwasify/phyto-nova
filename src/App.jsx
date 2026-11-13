@@ -1,3 +1,4 @@
+import { useEffect } from "react";
 import { Routes, Route } from "react-router-dom";
 import Navbar from "./components/Navbar";
 import Hero from "./components/Hero";
@@ -5,6 +6,7 @@ import ResearchOverview from "./components/ResearchOverview";
 import ResearchAreas from "./components/ResearchAreas";
 import Publications from "./components/Publications";
 import ProjectRepository from "./components/ProjectRepository";
+import ConferenceRecognition from "./components/ConferenceRecognition";
 import Supervisor from "./components/Supervisor";
 import PresentationTeam from "./components/PresentationTeam";
 import ProjectTeam from "./components/ProjectTeam";
@@ -14,6 +16,33 @@ import BackToTop from "./components/BackToTop/BackToTop";
 import NotFoundPage from "./components/NotFoundPage";
 
 function HomePage() {
+  useEffect(() => {
+    const targets = document.querySelectorAll("[data-reveal]");
+    if (!("IntersectionObserver" in window) || targets.length === 0) {
+      return undefined;
+    }
+
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add("is-visible");
+            observer.unobserve(entry.target);
+          }
+        });
+      },
+      { threshold: 0.12, rootMargin: "0px 0px -40px 0px" },
+    );
+
+    document.documentElement.classList.add("has-scroll-reveal");
+    targets.forEach((target) => observer.observe(target));
+
+    return () => {
+      observer.disconnect();
+      document.documentElement.classList.remove("has-scroll-reveal");
+    };
+  }, []);
+
   return (
     <>
       <Navbar />
@@ -23,6 +52,7 @@ function HomePage() {
         <ResearchAreas />
         <Publications />
         <ProjectRepository />
+        <ConferenceRecognition />
         <Supervisor />
         <PresentationTeam />
         <ProjectTeam />
