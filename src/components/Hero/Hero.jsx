@@ -24,7 +24,7 @@ export default function Hero() {
         />
         <div className="hero-overlay absolute inset-0 -z-10" />
 
-        <div className="relative z-10 mx-auto flex min-h-[540px] max-w-7xl flex-col justify-center px-5 py-20 sm:min-h-[600px] sm:py-24 lg:min-h-[640px] lg:px-8">
+        <div className="relative z-10 mx-auto flex min-h-[500px] max-w-7xl flex-col justify-center px-4 py-16 sm:min-h-[580px] sm:px-5 sm:py-20 lg:min-h-[640px] lg:px-8 lg:py-24">
           <div className="max-w-3xl" data-reveal>
             <p className="mb-6 text-xs font-semibold uppercase tracking-[0.25em] text-forest-300">
               {t.hero.label}
@@ -72,14 +72,14 @@ export default function Hero() {
       </div>
 
       <div className="border-b border-mist-200 bg-stone-soft">
-        <div className="mx-auto grid max-w-7xl grid-cols-2 gap-y-6 px-5 py-8 lg:grid-cols-4 lg:px-8" data-reveal="stagger">
+        <div className="mx-auto grid max-w-7xl grid-cols-2 gap-x-3 gap-y-5 px-4 py-6 sm:gap-x-5 sm:gap-y-6 sm:px-5 sm:py-8 lg:grid-cols-4 lg:px-8" data-reveal="stagger">
           {disciplineIcons.map((icon, index) => (
             <div
               key={icon}
-              className="flex items-center justify-center gap-3 text-navy-900"
+              className="flex min-w-0 items-center justify-center gap-2 text-center text-navy-900 sm:gap-3"
             >
-              <Icon icon={icon} width={28} height={28} className="text-navy-700" />
-              <span className="text-sm font-medium">
+              <Icon icon={icon} width={24} height={24} className="shrink-0 text-navy-700 sm:h-7 sm:w-7" />
+              <span className="text-xs font-medium leading-snug sm:text-sm">
                 {t.hero.disciplines[index]}
               </span>
             </div>

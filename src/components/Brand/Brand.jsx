@@ -14,12 +14,9 @@ export default function Brand({ light = false }) {
           className="h-full w-full object-contain"
         />
       </span>
-      <span
-        className={`font-display text-lg font-semibold tracking-tight sm:text-xl ${
-          light ? "text-white" : "text-navy-900"
-        }`}
-      >
-        Phyto Nova
+      <span className="font-display text-lg font-semibold tracking-tight sm:text-xl">
+        <span className={light ? "text-white" : "text-forest-800"}>Phyto</span>
+        <span className={light ? "text-white" : "text-navy-800"}> Nova</span>
       </span>
     </a>
   );

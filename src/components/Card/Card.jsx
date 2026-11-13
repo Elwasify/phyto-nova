@@ -1,16 +1,31 @@
+import { useState } from "react";
 import { Icon } from "@iconify/react";
 import styled from "styled-components";
+import { useLanguage } from "../../context/useLanguage";
 
 const Card = ({ name, role, photo, socialLinks = [] }) => {
+  const [expanded, setExpanded] = useState(false);
+  const { t, language } = useLanguage();
+
   return (
     <StyledWrapper>
-      <div className="card">
-        <img src={photo} alt={name} />
+      <div className={`card${expanded ? " is-expanded" : ""}`}>
+        <button
+          type="button"
+          className="image-toggle"
+          aria-label={`${expanded ? t.presentation.hideDetails : t.presentation.showDetails} ${name}`}
+          aria-expanded={expanded}
+          onClick={() => setExpanded((value) => !value)}
+        >
+          <img src={photo} alt="" loading="lazy" decoding="async" />
+        </button>
         <div className="content">
           <h3 className="title">
             {name}
             <br />
-            <span>{role}</span>
+            <span className={language === "ar" ? "localized-role" : undefined}>
+              {role}
+            </span>
           </h3>
           {socialLinks.length > 0 && (
             <ul className="sci">
@@ -20,7 +35,7 @@ const Card = ({ name, role, photo, socialLinks = [] }) => {
                     href={social.href}
                     target="_blank"
                     rel="noopener noreferrer"
-                    aria-label={`${name} on ${social.label}`}
+                    aria-label={`${name} ${t.presentation.socialLinkLabel} ${social.label}`}
                   >
                     <Icon icon={social.icon} width={20} height={20} />
                   </a>
@@ -58,8 +73,25 @@ const StyledWrapper = styled.div`
     transition: transform 0.5s ease, border-radius 0.5s ease;
   }
 
-  .card:hover img,
-  .card:focus-within img {
+  .image-toggle {
+    position: absolute;
+    inset: 0;
+    z-index: 1;
+    width: 100%;
+    height: 100%;
+    padding: 0;
+    overflow: hidden;
+    border: 0;
+    background: transparent;
+    cursor: pointer;
+  }
+
+  .image-toggle:focus-visible {
+    outline: 3px solid var(--color-forest-700, #587b64);
+    outline-offset: -5px;
+  }
+
+  .card.is-expanded img {
     transform: translateY(16px) scale(0.55);
     border-radius: 50%;
   }
@@ -69,6 +101,7 @@ const StyledWrapper = styled.div`
     left: 0;
     right: 0;
     bottom: 22px;
+    z-index: 2;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -77,8 +110,7 @@ const StyledWrapper = styled.div`
     transition: opacity 0.5s ease, transform 0.5s ease;
   }
 
-  .card:hover .content,
-  .card:focus-within .content {
+  .card.is-expanded .content {
     opacity: 1;
     transform: translateY(0);
   }
@@ -102,6 +134,11 @@ const StyledWrapper = styled.div`
     font-size: 0.75em;
     letter-spacing: 0.15em;
     text-transform: uppercase;
+  }
+
+  .content .title span.localized-role {
+    letter-spacing: normal;
+    text-transform: none;
   }
 
   .content .sci {
@@ -137,22 +174,48 @@ const StyledWrapper = styled.div`
     background: var(--color-navy-900, #1f4e6b);
   }
 
-  @media (hover: none) {
-    .card .content {
+  @media (hover: hover) {
+    .card:hover img,
+    .card:focus-within img {
+      transform: translateY(16px) scale(0.55);
+      border-radius: 50%;
+    }
+
+    .card:hover .content,
+    .card:focus-within .content {
       opacity: 1;
       transform: translateY(0);
     }
+  }
 
-    .card img {
+  @media (hover: none) {
+    .card:hover img {
+      transform: none;
+      border-radius: 0;
+    }
+
+    .card:hover .content {
+      opacity: 0;
+      transform: translateY(12px);
+    }
+
+    .card.is-expanded img {
       transform: translateY(16px) scale(0.55);
       border-radius: 50%;
+    }
+
+    .card.is-expanded .content {
+      opacity: 1;
+      transform: translateY(0);
     }
   }
 
   @media (prefers-reduced-motion: reduce) {
     .card:hover img,
-    .card:focus-within img {
+    .card:focus-within img,
+    .card.is-expanded img {
       transform: none;
+      border-radius: 0;
     }
   }
 `;

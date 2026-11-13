@@ -27,9 +27,9 @@ export default function Footer() {
 
   return (
     <footer className="site-footer text-white">
-      <div className="relative z-10 mx-auto max-w-7xl px-5 py-12 sm:py-16 lg:px-8">
-        <div className="grid items-start gap-10 sm:grid-cols-2 lg:grid-cols-[1.5fr_1fr_1.3fr_1fr] lg:gap-12" data-reveal="stagger">
-          <div className="sm:col-span-2 lg:col-span-1">
+      <div className="relative z-10 mx-auto max-w-7xl px-4 py-10 sm:px-5 sm:py-14 lg:px-8">
+        <div className="grid items-start gap-8 sm:grid-cols-2 sm:gap-10 xl:grid-cols-[1.5fr_1fr_1.3fr_1fr] xl:gap-12" data-reveal="stagger">
+          <div className="sm:col-span-2 xl:col-span-1">
             <Brand light />
             <p className="mt-5 max-w-sm text-sm leading-relaxed text-white/70">
               {t.footer.description}
@@ -99,7 +99,7 @@ export default function Footer() {
                   href={s.href}
                   target="_blank"
                   rel="noopener noreferrer"
-                  aria-label={`Mohamed Fouad on ${s.label}`}
+                  aria-label={`${t.footer.socialAccountPrefix} ${s.label}`}
                   className="flex h-11 w-11 items-center justify-center rounded-full border border-white/15 bg-white/5 transition-colors hover:border-sky-soft hover:text-sky-soft"
                 >
                   <Icon icon={s.icon} width={20} height={20} />
@@ -109,7 +109,7 @@ export default function Footer() {
           </div>
         </div>
 
-        <div className="mt-12 border-t border-white/10 pt-8 text-sm">
+        <div className="mt-10 border-t border-white/10 pt-6 text-sm sm:mt-12 sm:pt-8">
           <p className="text-white/60">{t.footer.copyright}</p>
         </div>
       </div>

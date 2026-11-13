@@ -8,10 +8,10 @@ export default function Publications() {
   return (
     <section
       id="publications"
-      className="surface surface-publications py-16 md:py-20 lg:py-28"
+      className="surface surface-publications py-12 sm:py-16 md:py-20 lg:py-24"
     >
-      <div className="surface-content mx-auto max-w-7xl px-5 lg:px-8">
-        <div className="grid items-end gap-8 lg:grid-cols-2 lg:gap-16" data-reveal>
+      <div className="surface-content mx-auto max-w-7xl px-4 sm:px-5 lg:px-8">
+        <div className="grid min-w-0 items-end gap-6 lg:grid-cols-2 lg:gap-16" data-reveal>
           <div>
             <p className="mb-4 text-xs font-semibold uppercase tracking-[0.25em] text-forest-700">
               {t.publicationsSection.label}
@@ -26,11 +26,11 @@ export default function Publications() {
           </p>
         </div>
 
-        <div className="mt-10 grid gap-5 sm:mt-14 md:grid-cols-2 md:gap-6" data-reveal="stagger">
+        <div className="mt-8 grid gap-4 sm:mt-12 md:grid-cols-2 md:gap-6" data-reveal="stagger">
           {publications.map((publication, index) => (
             <article
               key={publication.slug}
-              className="flex flex-col rounded-2xl border border-line bg-white/90 p-5 backdrop-blur-sm transition-all hover:-translate-y-1 hover:border-navy-700/40 hover:shadow-xl hover:shadow-navy-900/10 sm:p-8"
+              className="flex min-w-0 flex-col rounded-2xl border border-line bg-white/90 p-4 backdrop-blur-sm transition-all hover:-translate-y-1 hover:border-navy-700/40 hover:shadow-xl hover:shadow-navy-900/10 sm:p-6 lg:p-8"
             >
               <div className="flex flex-wrap items-center justify-between gap-3">
                 <p className="text-[11px] font-semibold uppercase tracking-[0.2em] text-forest-700">

@@ -18,10 +18,10 @@ export default function ResearchAreas() {
   return (
     <section
       id="research-areas"
-      className="surface surface-fields py-16 md:py-20 lg:py-28"
+      className="surface surface-fields py-12 sm:py-16 md:py-20 lg:py-24"
     >
-      <div className="surface-content mx-auto max-w-7xl px-5 lg:px-8">
-        <div className="grid items-end gap-8 lg:grid-cols-2 lg:gap-16" data-reveal>
+      <div className="surface-content mx-auto max-w-7xl px-4 sm:px-5 lg:px-8">
+        <div className="grid min-w-0 items-end gap-6 lg:grid-cols-2 lg:gap-16" data-reveal>
           <div>
             <p className="mb-4 text-xs font-semibold uppercase tracking-[0.25em] text-forest-700">
               {t.areasSection.label}
@@ -36,11 +36,11 @@ export default function ResearchAreas() {
           </p>
         </div>
 
-        <div className="mt-10 grid gap-5 sm:mt-14 sm:grid-cols-2 lg:grid-cols-4 lg:gap-6" data-reveal="stagger">
+        <div className="mt-8 grid gap-4 sm:mt-12 sm:grid-cols-2 sm:gap-5 xl:grid-cols-4 xl:gap-6" data-reveal="stagger">
           {areas.map((area, index) => (
             <article
               key={area.icon}
-              className="group flex flex-col rounded-2xl border border-line bg-white/90 p-6 backdrop-blur-sm transition-all hover:-translate-y-1 hover:border-navy-700/40 hover:shadow-xl hover:shadow-navy-900/10 sm:p-7"
+              className="group flex min-w-0 flex-col rounded-2xl border border-line bg-white/90 p-5 backdrop-blur-sm transition-all hover:-translate-y-1 hover:border-navy-700/40 hover:shadow-xl hover:shadow-navy-900/10 sm:p-7"
             >
               <div
                 className={`flex h-14 w-14 items-center justify-center rounded-full transition-colors ${tone}`}

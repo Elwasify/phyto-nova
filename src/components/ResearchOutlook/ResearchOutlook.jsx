@@ -5,8 +5,8 @@ export default function ResearchOutlook() {
   const { t } = useLanguage();
 
   return (
-    <section className="surface surface-outlook py-16 md:py-20 lg:py-28">
-      <div className="surface-content mx-auto flex max-w-3xl flex-col items-center px-5 text-center lg:px-8" data-reveal>
+    <section className="surface surface-outlook py-12 sm:py-16 md:py-20 lg:py-24">
+      <div className="surface-content mx-auto flex max-w-3xl flex-col items-center px-4 text-center sm:px-5 lg:px-8" data-reveal>
         <div className="flex h-16 w-16 items-center justify-center rounded-full border border-white/70 bg-white/80 text-navy-800 shadow-md shadow-navy-900/10 backdrop-blur-sm">
           <Icon icon="ph:leaf-duotone" width={32} height={32} />
         </div>

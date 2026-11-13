@@ -52,7 +52,7 @@ Vite will print the local development URL in the terminal.
 - Vite
 - Tailwind CSS
 - React Router
-- Iconify and Lucide icons
+- Iconify
 
 ## Project Structure
 
@@ -71,9 +71,23 @@ The site is deployed on [Vercel](https://vercel.com). To deploy your own copy, r
 
 ## Team
 
-- [Name], [Role / Affiliation]
-- Supervisor: [Name]
+- Mohammed Fouad
+- Shimaa Tawfiq
+- Ahmed Ehab
+- Fatma Yasser
+- Shirouk Mohamed
+- MaRim Osama
+- Nada Mohammed
+- Reham Abdelwahab
+- Shorouk Mohamed
+- Mazen Magdy
 
-## License
+Supervisor: Prof. Dr. Said Soliman
 
-[e.g., MIT]
+## العربية
+
+موقع فيتو نوفا مشروع بحثي أكاديمي ثنائي اللغة يستكشف زراعة الأنسجة النباتية وإمكاناتها في إنتاج المركبات النشطة بيولوجيًا ذات التطبيقات المحتملة المضادة للسرطان.
+
+يركز المشروع على التحفيز بالجسيمات النانوية، وإنتاج المركبات الأيضية الثانوية، والتوسع في المفاعلات الحيوية، والتحليل الأيضي. كما يعرض مجموعة مختارة من المنشورات العلمية وموارد المشروع والفريق الأكاديمي.
+
+للتشغيل محليًا، ثبّت الاعتماديات باستخدام `npm install` ثم شغّل `npm run dev`.

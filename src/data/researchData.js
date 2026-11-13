@@ -1,6 +1,6 @@
 import saidSolimanPortrait from "../assets/said-soliman.jpeg";
-import mohamedFouadPortrait from "../assets/mohamed-fouad.png";
-import shimaaTawfiqPortrait from "../assets/shimaa-tawfiq.png";
+import mohamedFouadPortrait from "../assets/mohamed-fouad.webp";
+import shimaaTawfiqPortrait from "../assets/shimaa-tawfiq.webp";
 
 export const repositoryUrl =
   "https://drive.google.com/drive/folders/1pWG-ckD27Wx0j1Fw4IfynzQlPynQ75oB?usp=sharing";

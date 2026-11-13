@@ -7,10 +7,10 @@ export default function ResearchOverview() {
   return (
     <section
       id="about"
-      className="surface surface-intro py-16 md:py-20 lg:py-28"
+      className="surface surface-intro py-12 sm:py-16 md:py-20 lg:py-24"
     >
       <div
-        className="surface-content mx-auto grid max-w-7xl items-center gap-12 px-5 lg:grid-cols-2 lg:gap-16 lg:px-8"
+        className="surface-content mx-auto grid min-w-0 max-w-7xl items-center gap-8 px-4 sm:gap-10 sm:px-5 lg:grid-cols-2 lg:gap-16 lg:px-8"
         data-reveal
       >
         <div className="lg:col-start-1">
@@ -36,7 +36,7 @@ export default function ResearchOverview() {
           </p>
         </div>
 
-        <figure className="lg:col-start-2">
+        <figure className="min-w-0 lg:col-start-2">
           <div className="group overflow-hidden rounded-2xl shadow-xl shadow-navy-900/15 ring-1 ring-line">
             <img
               src={heroImage}
