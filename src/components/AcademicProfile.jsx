@@ -14,7 +14,7 @@ export default function AcademicProfile({
     <section
       id={id}
       aria-labelledby={`${id}-heading`}
-      className="surface surface-profile py-16 sm:py-18 md:py-20 lg:py-24"
+      className="surface surface-profile py-12 sm:py-16 md:py-20 lg:py-24"
     >
       <div className="surface-content mx-auto max-w-6xl px-4 sm:px-5 lg:px-8">
         <div className="mx-auto mb-8 max-w-3xl text-center sm:mb-10" data-reveal>
@@ -37,7 +37,6 @@ export default function AcademicProfile({
             name={name}
             role={role}
             distinction={distinction}
-            headingLevel={3}
           />
         </div>
       </div>

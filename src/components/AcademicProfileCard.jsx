@@ -4,16 +4,13 @@ export default function AcademicProfileCard({
   photo,
   photoAlt,
   label,
-  title,
   name,
   role,
   distinction,
   compact = false,
   embedded = false,
-  headingLevel = 3,
   className = "",
 }) {
-  const Heading = `h${headingLevel}`;
   const cardClasses = embedded
     ? "h-full"
     : "mx-auto max-w-3xl overflow-hidden rounded-3xl border border-line bg-white shadow-[0_20px_55px_rgba(29,76,100,0.09)] sm:rounded-4xl";
@@ -23,9 +20,8 @@ export default function AcademicProfileCard({
   const imageClasses = compact
     ? "w-44 shrink-0 rounded-3xl border border-line bg-white p-2 shadow-md shadow-navy-900/5 sm:w-48"
     : "mx-auto w-full max-w-52 rounded-3xl border border-line bg-mist-50 p-2 shadow-md shadow-navy-900/5 md:mx-0";
-  const imageShapeClasses = compact
-    ? "aspect-4/5 w-full rounded-[1.25rem] object-cover object-top"
-    : "aspect-4/5 w-full rounded-[1.25rem] object-cover object-top";
+  const imageShapeClasses =
+    "aspect-4/5 w-full rounded-[1.25rem] object-cover object-top";
   const contentAlignment = compact
     ? "min-w-0 text-center"
     : "min-w-0 text-center md:text-start";
@@ -70,17 +66,11 @@ export default function AcademicProfileCard({
             </div>
           )}
 
-          {title && (
-            <p className="mt-3 font-display text-lg font-medium leading-snug text-ink-soft sm:text-xl">
-              {title}
-            </p>
-          )}
-
-          <Heading
+          <h3
             className={`mt-2 break-words font-display font-semibold leading-snug text-navy-900 ${nameClasses}`}
           >
             {name}
-          </Heading>
+          </h3>
 
           <p className="mt-3 whitespace-pre-line text-sm leading-relaxed text-ink-soft sm:mt-4 sm:text-base">
             {role}

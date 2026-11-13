@@ -8,10 +8,10 @@ export default function ProjectTeam() {
   return (
     <section
       id="team"
-      className="surface surface-team py-16 md:py-20 lg:py-28"
+      className="surface surface-team py-12 sm:py-16 md:py-20 lg:py-24"
     >
-      <div className="surface-content mx-auto max-w-7xl px-5 lg:px-8">
-        <div className="grid items-end gap-8 lg:grid-cols-2 lg:gap-16" data-reveal>
+      <div className="surface-content mx-auto max-w-7xl px-4 sm:px-5 lg:px-8">
+        <div className="grid min-w-0 items-end gap-6 lg:grid-cols-2 lg:gap-16" data-reveal>
           <div>
             <p className="mb-4 text-xs font-semibold uppercase tracking-[0.25em] text-forest-700">
               {t.team.label}
@@ -26,11 +26,11 @@ export default function ProjectTeam() {
           </p>
         </div>
 
-        <div className="mt-10 grid gap-4 sm:mt-14 sm:grid-cols-2 lg:grid-cols-5 lg:gap-5" data-reveal="stagger">
+        <div className="mt-8 grid gap-3 sm:mt-12 sm:grid-cols-2 sm:gap-4 lg:grid-cols-3 xl:gap-5 2xl:grid-cols-5" data-reveal="stagger">
           {teamMembers.map((member, index) => (
             <article
               key={member}
-              className="group rounded-2xl border border-line bg-white/90 p-5 backdrop-blur-sm transition-all hover:-translate-y-1 hover:border-navy-700/40 hover:shadow-xl hover:shadow-navy-900/10 sm:p-6"
+              className="group min-w-0 rounded-2xl border border-line bg-white/90 p-4 backdrop-blur-sm transition-all hover:-translate-y-1 hover:border-navy-700/40 hover:shadow-xl hover:shadow-navy-900/10 sm:p-5 lg:p-6"
             >
               <div className="flex items-center justify-between">
                 <p className="text-[11px] font-semibold tracking-[0.2em] text-forest-700">
