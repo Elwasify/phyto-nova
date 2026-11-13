@@ -1,32 +1,34 @@
-# Phyto Nova
+# 🌿 Phyto Nova
 
 **A bilingual academic research website exploring plant tissue culture and its potential role in anticancer drug discovery.**
 
-🌐 **Live site:** [phyto-nova.vercel.app](https://phyto-nova.vercel.app)
+🔗 [phyto-nova.vercel.app](https://phyto-nova.vercel.app)
 
-## Overview
-
-Phyto Nova explores plant tissue culture as a controlled platform for discovering and producing candidate anticancer compounds. It focuses on nano-elicitation as an approach to stimulating secondary-metabolite production, highlights the role of metabolomics in chemical characterization, and covers bioreactors for large-scale production.
-
-By reviewing and connecting findings from different plant-culture studies, including *Viola odorata* and rice callus suspension cultures, the project presents an integrated research pathway linking plant-cell cultivation, nanomaterial-based elicitation, metabolite analysis, and in-vitro anticancer screening.
+Phyto Nova presents research themes, scientific references, project resources, and the academic team behind the project. The website is available in English and Arabic, with right-to-left (RTL) layout support for Arabic.
 
 ## Features
 
-- Research themes and scientific references
-- Selected scientific publications
-- Project resources, supervisor and team information, and a research outlook
-- English and Arabic support, with right-to-left (RTL) layout for Arabic
+- 🌐 Bilingual interface (English / Arabic) with full RTL support
+- 🔬 Research themes overview
+- 📚 Selected scientific publications
+- 🗂️ Project resources
+- 👥 Supervisor and team information
+- 🔭 Research outlook
 
-## Research Topics
+## Research topics
 
 - Nano-elicitation
 - Secondary-metabolite production
 - Bioreactor scale-up
 - Metabolomics
 
-## Getting Started
+## Getting started
 
-**Prerequisites:** Node.js and npm
+### Prerequisites
+
+- [Node.js](https://nodejs.org/) (LTS recommended) and npm
+
+### Install and run locally
 
 ```bash
 git clone https://github.com/Elwasify/phyto-nova.git
@@ -37,7 +39,7 @@ npm run dev
 
 Vite will print the local development URL in the terminal.
 
-## Available Scripts
+### Available scripts
 
 | Command           | Description                          |
 | ----------------- | ------------------------------------ |
@@ -46,15 +48,16 @@ Vite will print the local development URL in the terminal.
 | `npm run preview` | Preview the production build locally |
 | `npm run lint`    | Run ESLint                           |
 
-## Built With
+## Built with
 
-- React
-- Vite
-- Tailwind CSS
-- React Router
-- Iconify
+- [React](https://react.dev/) 19
+- [Vite](https://vitejs.dev/)
+- [Tailwind CSS](https://tailwindcss.com/) 4
+- [React Router](https://reactrouter.com/)
+- [styled-components](https://styled-components.com/)
+- [Iconify](https://iconify.design/) icons
 
-## Project Structure
+## Project structure
 
 ```
 src/
@@ -63,31 +66,21 @@ src/
   data/        Research topics, publications, and project details
   i18n/        English and Arabic translations
   assets/      Images used by the website
+public/        Static files
 ```
+
+## Adding or editing content
+
+- Research topics, publications, and project details live in `src/data/`.
+- Translations for both languages live in `src/i18n/`. When you add new text, add it in **both** English and Arabic.
 
 ## Deployment
 
-The site is deployed on [Vercel](https://vercel.com). To deploy your own copy, run `npm run build` and serve the `dist/` folder, or connect the repository to Vercel.
+The site is deployed on [Vercel](https://vercel.com/). To deploy your own copy, import the repository into Vercel and use the Vite defaults:
 
-## Team
+- **Build command:** `npm run build`
+- **Output directory:** `dist`
 
-- Mohammed Fouad
-- Shimaa Tawfiq
-- Ahmed Ehab
-- Fatma Yasser
-- Shirouk Mohamed
-- MaRim Osama
-- Nada Mohammed
-- Reham Abdelwahab
-- Shorouk Mohamed
-- Mazen Magdy
+## License
 
-Supervisor: Prof. Dr. Said Soliman
-
-## العربية
-
-موقع فيتو نوفا مشروع بحثي أكاديمي ثنائي اللغة يستكشف زراعة الأنسجة النباتية وإمكاناتها في إنتاج المركبات النشطة بيولوجيًا ذات التطبيقات المحتملة المضادة للسرطان.
-
-يركز المشروع على التحفيز بالجسيمات النانوية، وإنتاج المركبات الأيضية الثانوية، والتوسع في المفاعلات الحيوية، والتحليل الأيضي. كما يعرض مجموعة مختارة من المنشورات العلمية وموارد المشروع والفريق الأكاديمي.
-
-للتشغيل محليًا، ثبّت الاعتماديات باستخدام `npm install` ثم شغّل `npm run dev`.
+No license has been specified yet. Add a `LICENSE` file to make the terms of use clear.
