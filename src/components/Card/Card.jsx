@@ -1,31 +1,14 @@
-import { useState } from "react";
 import { Icon } from "@iconify/react";
 import styled from "styled-components";
 import { useLanguage } from "../../context/useLanguage";
 
 const Card = ({ name, role, photo, socialLinks = [] }) => {
-  const [expanded, setExpanded] = useState(false);
   const { t, language } = useLanguage();
 
   return (
     <StyledWrapper>
-      <div className={`card${expanded ? " is-expanded" : ""}`}>
-        <button
-          type="button"
-          className="image-toggle"
-          aria-label={`${expanded ? t.presentation.hideDetails : t.presentation.showDetails} ${name}`}
-          aria-expanded={expanded}
-          onClick={() => setExpanded((value) => !value)}
-        >
-          <img src={photo} alt="" loading="lazy" decoding="async" />
-          <span className="toggle-indicator" aria-hidden="true">
-            <Icon
-              icon={expanded ? "ph:x-bold" : "ph:plus-bold"}
-              width={18}
-              height={18}
-            />
-          </span>
-        </button>
+      <div className="card">
+        <img src={photo} alt="" loading="lazy" decoding="async" />
         <div className="content">
           <h3 className="title">
             {name}
@@ -81,53 +64,6 @@ const StyledWrapper = styled.div`
     object-position: top;
     transform-origin: top center;
     transition: transform 0.5s ease, border-radius 0.5s ease;
-  }
-
-  .image-toggle {
-    position: absolute;
-    inset: 0;
-    z-index: 1;
-    width: 100%;
-    height: 100%;
-    padding: 0;
-    overflow: hidden;
-    border: 0;
-    background: transparent;
-    cursor: pointer;
-  }
-
-  .toggle-indicator {
-    position: absolute;
-    top: 12px;
-    inset-inline-end: 12px;
-    display: flex;
-    width: 36px;
-    height: 36px;
-    align-items: center;
-    justify-content: center;
-    border: 1px solid rgba(255, 255, 255, 0.72);
-    border-radius: 9999px;
-    background: rgba(25, 72, 90, 0.78);
-    color: #ffffff;
-    opacity: 0;
-    transform: scale(0.9);
-    transition: opacity 0.25s ease, transform 0.25s ease;
-  }
-
-  .card.is-expanded .toggle-indicator,
-  .image-toggle:focus-visible .toggle-indicator {
-    opacity: 1;
-    transform: scale(1);
-  }
-
-  .image-toggle:focus-visible {
-    outline: 3px solid var(--color-forest-700, #587b64);
-    outline-offset: -5px;
-  }
-
-  .card.is-expanded img {
-    transform: translateY(16px) scale(0.55);
-    border-radius: 50%;
   }
 
   .card .content {
@@ -223,36 +159,29 @@ const StyledWrapper = styled.div`
   }
 
   @media (hover: none) {
-    .toggle-indicator {
-      opacity: 1;
-      transform: scale(1);
+    .card {
+      aspect-ratio: auto;
+      height: 360px;
     }
 
-    .card:hover img {
-      transform: none;
-      border-radius: 0;
-    }
-
-    .card:hover .content {
-      opacity: 0;
-      transform: translateY(12px);
-    }
-
-    .card.is-expanded img {
+    .card img {
       transform: translateY(16px) scale(0.55);
       border-radius: 50%;
     }
 
-    .card.is-expanded .content {
+    .card .content {
+      bottom: 0;
+      padding: 12px 0 18px;
+      background: #ffffff;
       opacity: 1;
-      transform: translateY(0);
+      transform: none;
     }
   }
 
   @media (prefers-reduced-motion: reduce) {
     .card:hover img,
     .card:focus-within img,
-    .card.is-expanded img {
+    .card img {
       transform: none;
       border-radius: 0;
     }
