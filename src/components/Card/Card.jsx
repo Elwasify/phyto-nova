@@ -18,6 +18,13 @@ const Card = ({ name, role, photo, socialLinks = [] }) => {
           onClick={() => setExpanded((value) => !value)}
         >
           <img src={photo} alt="" loading="lazy" decoding="async" />
+          <span className="toggle-indicator" aria-hidden="true">
+            <Icon
+              icon={expanded ? "ph:x-bold" : "ph:plus-bold"}
+              width={18}
+              height={18}
+            />
+          </span>
         </button>
         <div className="content">
           <h3 className="title">
@@ -50,10 +57,13 @@ const Card = ({ name, role, photo, socialLinks = [] }) => {
 };
 
 const StyledWrapper = styled.div`
+  width: 100%;
+  max-width: 240px;
+
   .card {
     position: relative;
-    width: min(240px, calc(100vw - 2.5rem));
-    height: 320px;
+    width: 100%;
+    aspect-ratio: 3 / 4;
     background: #ffffff;
     border: 1px solid var(--color-line, #e3e8ea);
     border-radius: 20px;
@@ -84,6 +94,30 @@ const StyledWrapper = styled.div`
     border: 0;
     background: transparent;
     cursor: pointer;
+  }
+
+  .toggle-indicator {
+    position: absolute;
+    top: 12px;
+    inset-inline-end: 12px;
+    display: flex;
+    width: 36px;
+    height: 36px;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid rgba(255, 255, 255, 0.72);
+    border-radius: 9999px;
+    background: rgba(25, 72, 90, 0.78);
+    color: #ffffff;
+    opacity: 0;
+    transform: scale(0.9);
+    transition: opacity 0.25s ease, transform 0.25s ease;
+  }
+
+  .card.is-expanded .toggle-indicator,
+  .image-toggle:focus-visible .toggle-indicator {
+    opacity: 1;
+    transform: scale(1);
   }
 
   .image-toggle:focus-visible {
@@ -189,6 +223,11 @@ const StyledWrapper = styled.div`
   }
 
   @media (hover: none) {
+    .toggle-indicator {
+      opacity: 1;
+      transform: scale(1);
+    }
+
     .card:hover img {
       transform: none;
       border-radius: 0;

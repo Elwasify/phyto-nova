@@ -6,7 +6,10 @@ export default function PresentationTeam() {
   const { t } = useLanguage();
 
   return (
-    <section className="surface surface-presenters py-12 sm:py-16 md:py-20 lg:py-24">
+    <section
+      id="team"
+      className="surface surface-presenters py-12 sm:py-16 md:py-20 lg:py-24"
+    >
       <div className="surface-content mx-auto max-w-5xl px-4 text-center sm:px-5 lg:px-8">
         <div data-reveal>
           <p className="mb-3 text-xs font-semibold uppercase tracking-[0.25em] text-forest-800">
@@ -18,7 +21,10 @@ export default function PresentationTeam() {
           <div className="mx-auto mt-5 h-1 w-16 rounded-full bg-linear-to-r from-forest-700 to-navy-800" />
         </div>
 
-        <div className="mt-8 flex flex-wrap justify-center gap-5 sm:mt-12 sm:gap-8" data-reveal="stagger">
+        <div
+          className="mt-8 grid grid-cols-1 justify-items-center gap-5 sm:mt-12 sm:grid-cols-2 sm:gap-8"
+          data-reveal="stagger"
+        >
           {presenters.map((presenter) => (
             <Card
               key={presenter.name}

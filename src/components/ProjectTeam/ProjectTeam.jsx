@@ -7,7 +7,7 @@ export default function ProjectTeam() {
 
   return (
     <section
-      id="team"
+      id="team-members"
       className="surface surface-team py-12 sm:py-16 md:py-20 lg:py-24"
     >
       <div className="surface-content mx-auto max-w-7xl px-4 sm:px-5 lg:px-8">
