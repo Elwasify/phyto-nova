@@ -10,7 +10,7 @@ import ConferenceRecognition from "./components/ConferenceRecognition";
 import Supervisor from "./components/Supervisor";
 import PresentationTeam from "./components/PresentationTeam";
 import ProjectTeam from "./components/ProjectTeam";
-import ResearchOutlook from "./components/ResearchOutlook";
+import Rating from "./components/Rating";
 import Footer from "./components/Footer";
 import BackToTop from "./components/BackToTop/BackToTop";
 import NotFoundPage from "./components/NotFoundPage";
@@ -56,7 +56,7 @@ function HomePage() {
         <Supervisor />
         <PresentationTeam />
         <ProjectTeam />
-        <ResearchOutlook />
+        <Rating />
       </main>
       <Footer />
     </>
