@@ -6,11 +6,10 @@ import { useLanguage } from "../../context/useLanguage";
 
 export default function Navbar() {
   const [open, setOpen] = useState(false);
-  const { t, toggleLanguage, language } = useLanguage();
-  const navigation = [
-    ...t.nav,
-    { label: language === "ar" ? "المؤتمر" : "Conference", href: "#conference" },
-  ];
+  const { t, toggleLanguage } = useLanguage();
+  const navigation = t.nav.filter((item) =>
+    ["#about", "#publications", "#team"].includes(item.href),
+  );
 
   return (
     <header className="sticky top-0 z-50 border-b border-line bg-paper/90 backdrop-blur">
@@ -69,7 +68,10 @@ export default function Navbar() {
 
       {open && (
         <div className="max-h-[calc(100dvh-4rem)] overflow-y-auto border-t border-line bg-paper xl:hidden">
-          <nav id="mobile-navigation" className="mx-auto flex max-w-7xl flex-col gap-1 px-4 py-3 sm:px-5 sm:py-4">
+          <nav
+            id="mobile-navigation"
+            className="mx-auto flex max-w-7xl flex-col gap-1 px-4 py-3 sm:px-5 sm:py-4"
+          >
             {navigation.map((item) => (
               <a
                 key={item.href}
