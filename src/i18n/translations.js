@@ -130,12 +130,27 @@ export const translations = {
       description:
         "A shared curiosity. A collaborative approach. A new perspective on plant biotechnology.",
     },
-    outlook: {
-      label: "The Research Outlook",
-      title: "Towards More Sustainable Plant-Based Drug Discovery",
+    rating: {
+      label: "Join the Conversation",
+      title: "Rate the Idea & Share Your Suggestions",
       description:
-        "Integrating plant biotechnology, nano-elicitation, bioreactor cultivation, and metabolomics offers a promising research direction for understanding and producing plant-derived bioactive compounds. Our focus is on exploring this potential through a careful, scientifically grounded approach.",
-      button: "Explore the scientific references",
+        "Your scientific feedback helps us improve Phyto Nova. Rate the research idea and tell us what you think.",
+      ratingLabel: "How would you rate the research idea?",
+      typeLabel: "Type of feedback",
+      types: {
+        feedback: "Feedback on the idea",
+        suggestion: "Suggestion to improve the research",
+        question: "Scientific question",
+      },
+      messagePlaceholder: "Write your feedback or suggestion here...",
+      namePlaceholder: "Your name (optional)",
+      emailPlaceholder: "Your email (optional, if you'd like a reply)",
+      submit: "Send",
+      sending: "Sending...",
+      thanks: "Thank you! Your input is valuable to the Phyto Nova team. 🌿",
+      error: "Something went wrong, please try again.",
+      star: "stars",
+      noComment: "(no message)",
     },
     footer: {
       description:
@@ -144,7 +159,6 @@ export const translations = {
       backToTop: "Back to top",
       socialAccountPrefix: "Mohamed Fouad on",
       copyright: "© 2026 Phyto Nova Team. An academic research project.",
-      tagline: "Plant science. New possibilities.",
     },
   },
   ar: {
@@ -277,12 +291,27 @@ export const translations = {
       description:
         "فضول مشترك. نهج تعاوني. منظور جديد للتكنولوجيا الحيوية النباتية.",
     },
-    outlook: {
-      label: "آفاق البحث",
-      title: "نحو اكتشاف أكثر استدامة للأدوية من النباتات",
+    rating: {
+      label: "شاركنا رأيك",
+      title: "قيّم الفكرة البحثية وشاركنا مقترحاتك",
       description:
-        "يقدّم الجمع بين التكنولوجيا الحيوية النباتية والتحفيز بالجسيمات النانوية والزراعة في المفاعلات الحيوية وعلم الأيض اتجاهًا بحثيًا واعدًا لفهم وإنتاج المركبات النشطة بيولوجيًا المستمدة من النباتات. ويتركز اهتمامنا على استكشاف هذه الإمكانات بنهج دقيق ومبني على أسس علمية.",
-      button: "استكشف المراجع العلمية",
+        "رأيك العلمي يساعدنا على تطوير فيتو نوفا. قيّم فكرة البحث وقل لنا ما تراه.",
+      ratingLabel: "كيف تقيّم فكرة البحث؟",
+      typeLabel: "نوع المشاركة",
+      types: {
+        feedback: "تعليق على الفكرة",
+        suggestion: "اقتراح لتطوير البحث",
+        question: "سؤال علمي",
+      },
+      messagePlaceholder: "اكتب تعليقك أو اقتراحك هنا...",
+      namePlaceholder: "اسمك (اختياري)",
+      emailPlaceholder: "بريدك الإلكتروني (اختياري، لو تحب أن نرد عليك)",
+      submit: "إرسال",
+      sending: "جاري الإرسال...",
+      thanks: "شكرًا لك! مشاركتك قيّمة لفريق فيتو نوفا. 🌿",
+      error: "حصلت مشكلة، جرب تاني.",
+      star: "نجوم",
+      noComment: "(بدون رسالة)",
     },
     footer: {
       description:
@@ -291,7 +320,6 @@ export const translations = {
       backToTop: "العودة للأعلى",
       socialAccountPrefix: "حساب محمد فؤاد على",
       copyright: "© 2026 فريق فيتو نوفا. مشروع بحثي أكاديمي.",
-      tagline: "علوم النبات. آفاق جديدة.",
     },
   },
 };
