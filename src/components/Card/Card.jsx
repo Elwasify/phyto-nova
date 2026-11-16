@@ -115,9 +115,10 @@ const StyledWrapper = styled.div`
     display: flex;
     justify-content: center;
     align-items: center;
-    gap: 10px;
+    gap: 8px;
     margin: 12px 0 0;
     padding: 0;
+    flex-wrap: wrap;
   }
 
   .sci li {

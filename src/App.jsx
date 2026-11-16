@@ -9,6 +9,7 @@ import ProjectRepository from "./components/ProjectRepository";
 import ConferenceRecognition from "./components/ConferenceRecognition";
 import Supervisor from "./components/Supervisor";
 import PresentationTeam from "./components/PresentationTeam";
+import TechnicalSupport from "./components/TechnicalSupport";
 import ProjectTeam from "./components/ProjectTeam";
 import Rating from "./components/Rating";
 import Footer from "./components/Footer";
@@ -55,6 +56,7 @@ function HomePage() {
         <ConferenceRecognition />
         <Supervisor />
         <PresentationTeam />
+        <TechnicalSupport />
         <ProjectTeam />
         <Rating />
       </main>

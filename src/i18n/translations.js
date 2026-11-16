@@ -124,6 +124,15 @@ export const translations = {
       hideDetails: "Hide details for",
       socialLinkLabel: "on",
     },
+    technicalSupport: {
+      label: "THE DEVELOPER",
+      title: "Technical Support",
+      role: "FRONTEND DEVELOPER",
+      handle: "@Elwasify",
+      name: "ENG. Abdallah Elwasify",
+      description: "Designed and developed the Phyto Nova website.",
+      socialLabel: "Social",
+    },
     team: {
       label: "The People Behind the Project",
       title: "Meet the Phyto Nova Team",
@@ -150,7 +159,7 @@ export const translations = {
       thanks: "Thank you! Your input is valuable to the Phyto Nova team. 🌿",
       error: "Something went wrong, please try again.",
       star: "stars",
-      noComment: "(no message)",
+      submitAnother: "Submit another response",
     },
     footer: {
       description:
@@ -285,6 +294,15 @@ export const translations = {
       hideDetails: "إخفاء تفاصيل",
       socialLinkLabel: "على",
     },
+    technicalSupport: {
+      label: "المطوّر",
+      title: "الدعم التقني",
+      role: "مطوّر واجهات",
+      handle: "@Elwasify",
+      name: "م. عبد الله الوصيفي",
+      description: "تصميم وتطوير موقع Phyto Nova.",
+      socialLabel: "التواصل الاجتماعي",
+    },
     team: {
       label: "الأشخاص وراء المشروع",
       title: "تعرّف على فريق فيتو نوفا",
@@ -311,7 +329,7 @@ export const translations = {
       thanks: "شكرًا لك! مشاركتك قيّمة لفريق فيتو نوفا. 🌿",
       error: "حصلت مشكلة، جرب تاني.",
       star: "نجوم",
-      noComment: "(بدون رسالة)",
+      submitAnother: "إرسال مشاركة أخرى",
     },
     footer: {
       description:
