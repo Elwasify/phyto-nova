@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { Icon } from "@iconify/react";
 import { useLanguage } from "../../context/useLanguage";
 
 const TYPES = ["feedback", "suggestion", "question"];
@@ -22,7 +23,7 @@ export default function Rating() {
 
   async function handleSubmit(e) {
     e.preventDefault();
-    if (!rating) return;
+    if (!rating || !message.trim()) return;
     if (honeypot) return;
     setStatus("sending");
 
@@ -31,7 +32,9 @@ export default function Rating() {
         method: "POST",
         headers: { "Content-Type": "application/json", Accept: "application/json" },
         body: JSON.stringify({
-          access_key: "05e34385-9078-4a77-a24d-b64c78627f1a",
+          access_key:
+            import.meta.env.VITE_WEB3FORMS_ACCESS_KEY ||
+            "05e34385-9078-4a77-a24d-b64c78627f1a",
           subject: `Phyto Nova - ${t.rating.types[type]}`,
           from_name: name || "Anonymous",
           rating: `${rating} / 5`,
@@ -39,7 +42,7 @@ export default function Rating() {
           name: name || "-",
           email: email || "-",
           language: document.documentElement.lang,
-          message: message || t.rating.noComment,
+          message: message.trim(),
         }),
       });
       const data = await res.json();
@@ -59,8 +62,15 @@ export default function Rating() {
     }
   }
 
+  function handleReset() {
+    setStatus("idle");
+    setRating(0);
+    setHover(0);
+    setMessage("");
+  }
+
   const inputClass =
-    "w-full rounded-lg border border-line bg-mist-50 p-3 text-sm text-ink placeholder:text-ink-soft focus:border-navy-800 focus:outline-none";
+    "w-full rounded-lg border border-line bg-mist-50 p-3 text-sm text-ink placeholder:text-ink-soft transition-colors focus:border-navy-800 focus:outline-none";
 
   return (
     <section
@@ -78,7 +88,7 @@ export default function Rating() {
           <h2 className="mt-4 font-display text-3xl font-medium leading-tight text-navy-900 sm:text-4xl">
             {t.rating.title}
           </h2>
-          <div className="mx-auto mt-5 h-1 w-16 rounded-full bg-navy-900" />
+          <div className="mx-auto mt-5 h-1 w-16 rounded-full bg-linear-to-r from-forest-700 to-navy-800" />
           <p className="mt-5 text-base leading-relaxed text-ink-soft">
             {t.rating.description}
           </p>
@@ -86,9 +96,22 @@ export default function Rating() {
 
         <article className="rounded-xl border border-line bg-white p-6 shadow-sm sm:p-8">
           {status === "done" ? (
-            <p className="py-6 text-center text-lg text-navy-900">
-              {t.rating.thanks}
-            </p>
+            <div className="py-6 text-center">
+              <div className="mx-auto mb-3 flex h-14 w-14 items-center justify-center rounded-full border border-forest-700/20 bg-forest-50 text-forest-800">
+                <Icon icon="ph:check-circle-duotone" width={32} height={32} />
+              </div>
+              <p className="text-lg text-navy-900">
+                {t.rating.thanks}
+              </p>
+              <button
+                type="button"
+                onClick={handleReset}
+                className="mt-5 inline-flex items-center gap-1.5 text-xs font-semibold text-forest-800 underline underline-offset-4 transition-colors hover:text-navy-900"
+              >
+                <Icon icon="ph:arrow-counter-clockwise-bold" width={14} height={14} />
+                {t.rating.submitAnother}
+              </button>
+            </div>
           ) : (
             <form onSubmit={handleSubmit} className="space-y-5">
               <input
@@ -106,21 +129,29 @@ export default function Rating() {
                 <p className="mb-2 text-sm font-medium text-ink">
                   {t.rating.ratingLabel}
                 </p>
-                <div className="flex justify-center gap-1" dir="ltr">
+                <div className="flex h-11 items-center justify-center gap-1" dir="ltr">
                   {[1, 2, 3, 4, 5].map((n) => (
                     <button
                       type="button"
                       key={n}
                       aria-pressed={rating === n}
-                      onClick={() => setRating(n)}
+                      onClick={(e) => {
+                        e.preventDefault();
+                        setRating(n);
+                      }}
                       onMouseEnter={() => setHover(n)}
                       onMouseLeave={() => setHover(0)}
                       aria-label={`${n} ${t.rating.star}`}
-                      className={`text-4xl transition-transform hover:scale-110 ${
-                        n <= (hover || rating) ? "text-[#d4a72c]" : "text-mist-300"
-                      }`}
+                      className="flex h-10 w-10 items-center justify-center p-0 focus:outline-none"
                     >
-                      ★
+                      <Icon
+                        icon={n <= (hover || rating) ? "ph:star-fill" : "ph:star-duotone"}
+                        width={32}
+                        height={32}
+                        className={`transition-colors duration-150 ${
+                          n <= (hover || rating) ? "text-amber-400" : "text-mist-300"
+                        }`}
+                      />
                     </button>
                   ))}
                 </div>
@@ -151,6 +182,7 @@ export default function Rating() {
 
               <textarea
                 placeholder={t.rating.messagePlaceholder}
+                required
                 value={message}
                 onChange={(e) => setMessage(e.target.value)}
                 className={`${inputClass} min-h-[110px]`}
@@ -176,10 +208,17 @@ export default function Rating() {
               <div className="text-center">
                 <button
                   type="submit"
-                  disabled={!rating || status === "sending"}
-                  className="rounded-full bg-navy-900 px-8 py-3 text-sm font-semibold text-white transition-all hover:-translate-y-0.5 hover:bg-navy-950 hover:shadow-lg disabled:cursor-not-allowed disabled:opacity-40 disabled:hover:translate-y-0"
+                  disabled={!rating || !message.trim() || status === "sending"}
+                  className="inline-flex items-center justify-center gap-2 rounded-full bg-navy-900 px-8 py-3 text-sm font-semibold text-white transition-all hover:-translate-y-0.5 hover:bg-navy-950 hover:shadow-lg focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-navy-900 disabled:cursor-not-allowed disabled:opacity-40 disabled:hover:translate-y-0"
                 >
-                  {status === "sending" ? t.rating.sending : t.rating.submit}
+                  {status === "sending" ? (
+                    <>
+                      <Icon icon="ph:spinner-gap-bold" width={16} height={16} className="animate-spin" />
+                      {t.rating.sending}
+                    </>
+                  ) : (
+                    t.rating.submit
+                  )}
                 </button>
 
                 {status === "error" && (

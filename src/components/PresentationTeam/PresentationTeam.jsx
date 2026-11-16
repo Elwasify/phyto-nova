@@ -8,7 +8,7 @@ export default function PresentationTeam() {
   return (
     <section
       id="team"
-      className="surface surface-publications py-12 sm:py-16 md:py-20 lg:py-24"
+      className="surface surface-presenters py-12 sm:py-16 md:py-20 lg:py-24"
     >
       <div className="surface-content mx-auto max-w-5xl px-4 text-center sm:px-5 lg:px-8">
         <div data-reveal>

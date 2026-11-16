@@ -18,8 +18,12 @@
   --color-mist-200: #dfeae0;
   --color-mist-300: #c8dcca;
 
+  --color-surface-base: #ffffff;
+  --color-surface-alt: #f1f7f1;
+  --color-surface-dark: #153b4a;
+
   --color-sky-soft: #e5f0e9;
-  --color-paper: #fafcfa;
+  --color-paper: var(--color-surface-base);
   --color-stone-soft: #e5f0e9;
   --color-ink: #203631;
   --color-ink-soft: #60736c;
@@ -35,128 +39,48 @@
   overflow: hidden;
 }
 
-.surface::before,
-.surface::after {
-  position: absolute;
-  inset: 0;
-  z-index: 0;
-  pointer-events: none;
-  content: "";
-}
-
 .surface-content {
   position: relative;
   z-index: 1;
 }
 
-.surface-intro {
-  background:
-    radial-gradient(ellipse at 0% 12%, rgb(104 151 116 / 10%), transparent 34%),
-    radial-gradient(ellipse at 100% 88%, rgb(25 72 90 / 8%), transparent 32%),
-    linear-gradient(135deg, var(--color-paper), var(--color-mist-50) 55%, var(--color-paper));
-}
-
-.surface-intro::after {
-  opacity: 0.48;
-  background-image: radial-gradient(rgb(25 72 90 / 9%) 0.8px, transparent 0.8px);
-  background-size: 26px 26px;
-  mask-image: radial-gradient(ellipse at center, #000 18%, transparent 76%);
-}
-
-.surface-fields {
-  background: linear-gradient(125deg, #edf4ed, #e5f0e9 52%, #f1f6ef);
-}
-
-.surface-fields::before {
-  background:
-    radial-gradient(ellipse at 100% 0%, rgb(80 126 88 / 14%), transparent 34%),
-    radial-gradient(ellipse at 0% 100%, rgb(25 72 90 / 9%), transparent 38%);
-}
-
-.surface-fields::after {
-  opacity: 0.2;
-  background:
-    radial-gradient(ellipse 42px 78px at 50% 50%, transparent 62%, rgb(61 101 85 / 14%) 63%, transparent 66%),
-    radial-gradient(ellipse 42px 78px at 50% 50%, transparent 62%, rgb(61 101 85 / 14%) 63%, transparent 66%);
-  background-size: 116px 116px;
-  background-position: 0 0, 58px 58px;
-  mask-image: linear-gradient(135deg, #000, transparent 75%);
-}
-
-.surface-publications {
-  background:
-    radial-gradient(ellipse at 0% 0%, rgb(104 151 116 / 8%), transparent 32%),
-    radial-gradient(ellipse at 100% 100%, rgb(25 72 90 / 6%), transparent 34%),
-    linear-gradient(180deg, var(--color-paper), #fff 48%, var(--color-paper));
-}
-
-.surface-publications::after {
-  opacity: 0.38;
-  background-image:
-    linear-gradient(rgb(25 72 90 / 4%) 1px, transparent 1px),
-    linear-gradient(90deg, rgb(25 72 90 / 4%) 1px, transparent 1px);
-  background-size: 38px 38px;
-  mask-image: radial-gradient(ellipse at center, #000 10%, transparent 78%);
-}
-
-.surface-team {
-  background:
-    radial-gradient(ellipse at 10% 12%, rgb(94 145 103 / 13%), transparent 30%),
-    radial-gradient(ellipse at 96% 90%, rgb(47 104 118 / 10%), transparent 32%),
-    linear-gradient(135deg, #e5f0e9, #f4f8f3 60%, #edf4ed);
-}
-
-.surface-team::after {
-  opacity: 0.3;
-  background-image: radial-gradient(rgb(61 101 85 / 11%) 0.8px, transparent 0.8px);
-  background-size: 30px 30px;
-  mask-image: radial-gradient(ellipse at center, #000 12%, transparent 74%);
-}
-
-.surface-presenters {
-  background:
-    radial-gradient(ellipse at 92% 8%, rgb(47 104 118 / 10%), transparent 34%),
-    radial-gradient(ellipse at 8% 92%, rgb(94 145 103 / 12%), transparent 32%),
-    linear-gradient(145deg, #f8fbf8, #eaf3ec 58%, #f5f9f5);
-}
-
-.surface-presenters::after {
-  opacity: 0.24;
-  background-image:
-    radial-gradient(circle at center, rgb(61 101 85 / 12%) 1px, transparent 1.2px);
-  background-size: 34px 34px;
-  mask-image: radial-gradient(ellipse at center, #000 8%, transparent 76%);
-}
-
+.surface-intro,
+.surface-publications,
 .surface-profile {
-  background:
-    radial-gradient(ellipse at 100% 0%, rgb(47 104 118 / 10%), transparent 34%),
-    radial-gradient(ellipse at 0% 100%, rgb(94 145 103 / 12%), transparent 36%),
-    linear-gradient(135deg, #edf4ed, var(--color-paper) 50%, #eaf2eb);
+  background-color: var(--color-surface-base);
 }
 
-.surface-profile::after {
-  opacity: 0.32;
-  background-image: radial-gradient(rgb(25 72 90 / 8%) 0.8px, transparent 0.8px);
-  background-size: 28px 28px;
-  mask-image: radial-gradient(ellipse at center, #000 15%, transparent 76%);
+.surface-fields,
+.surface-team,
+.surface-presenters,
+.surface-conference,
+.discipline-strip {
+  background-color: var(--color-surface-alt);
 }
 
-.surface-conference {
-  background:
-    radial-gradient(ellipse at 0% 0%, rgb(94 145 103 / 10%), transparent 30%),
-    radial-gradient(ellipse at 100% 100%, rgb(47 104 118 / 8%), transparent 34%),
-    linear-gradient(155deg, var(--color-paper), #edf4ed 70%, #e8f1e9);
+.surface-cta,
+.site-footer {
+  background-color: var(--color-surface-dark);
 }
 
 .surface-cta {
   background:
     radial-gradient(ellipse at 12% 0%, rgb(112 165 126 / 20%), transparent 38%),
     radial-gradient(ellipse at 100% 100%, rgb(69 133 145 / 24%), transparent 42%),
-    linear-gradient(120deg, #153b4a, #19485a 56%, #20586a);
+    linear-gradient(
+      120deg,
+      var(--color-surface-dark),
+      var(--color-navy-900) 56%,
+      var(--color-surface-dark)
+    );
 }
 
 .surface-cta::after {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  pointer-events: none;
+  content: "";
   opacity: 0.48;
   background:
     radial-gradient(ellipse 34px 92px at 50% 50%, transparent 62%, rgb(237 244 237 / 16%) 63%, transparent 66%),
@@ -170,7 +94,7 @@
   position: relative;
   isolation: isolate;
   overflow: hidden;
-  background-color: var(--color-navy-950);
+  background-color: var(--color-surface-dark);
 }
 
 .hero-overlay {
@@ -199,21 +123,6 @@ html[dir="rtl"] .hero-overlay {
   isolation: isolate;
   overflow: hidden;
   border-top: 1px solid rgb(237 244 237 / 16%);
-  background:
-    radial-gradient(ellipse at 100% 0%, rgb(69 133 145 / 17%), transparent 38%),
-    linear-gradient(160deg, #19485a, #153b4a 72%);
-}
-
-.site-footer::before {
-  position: absolute;
-  top: -12rem;
-  inset-inline-end: -8rem;
-  width: 30rem;
-  height: 30rem;
-  border-radius: 50%;
-  background: radial-gradient(circle, rgb(112 165 126 / 10%), transparent 68%);
-  pointer-events: none;
-  content: "";
 }
 
 html {
@@ -228,7 +137,7 @@ section[id] {
 body {
   margin: 0;
   overflow-x: clip;
-  background-color: var(--color-paper);
+  background-color: var(--color-surface-base);
   color: var(--color-ink);
   font-family: var(--font-body);
 }
@@ -338,15 +247,6 @@ html.has-scroll-reveal [data-reveal="stagger"].is-visible > :nth-child(10) {
       border-color 220ms ease,
       box-shadow 220ms ease,
       transform 220ms ease;
-  }
-}
-
-@media (max-width: 640px) {
-  .surface-fields::after,
-  .surface-publications::after,
-  .surface-team::after,
-  .surface-presenters::after {
-    opacity: 0.14;
   }
 }
 

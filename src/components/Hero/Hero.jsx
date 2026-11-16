@@ -71,7 +71,7 @@ export default function Hero() {
         </div>
       </div>
 
-      <div className="border-b border-mist-200 bg-stone-soft">
+      <div className="discipline-strip border-b border-mist-200">
         <div className="mx-auto grid max-w-7xl grid-cols-2 gap-x-3 gap-y-5 px-4 py-6 sm:gap-x-5 sm:gap-y-6 sm:px-5 sm:py-8 lg:grid-cols-4 lg:px-8" data-reveal="stagger">
           {disciplineIcons.map((icon, index) => (
             <div

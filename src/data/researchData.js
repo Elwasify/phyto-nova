@@ -1,6 +1,7 @@
 import saidSolimanPortrait from "../assets/said-soliman.jpeg";
 import mohamedFouadPortrait from "../assets/mohamed-fouad.webp";
 import shimaaTawfiqPortrait from "../assets/shimaa-tawfiq.webp";
+import abdallahElwasifyPortrait from "../assets/abdallah-elwasify.webp";
 
 export const repositoryUrl =
   "https://drive.google.com/drive/folders/1pWG-ckD27Wx0j1Fw4IfynzQlPynQ75oB?usp=sharing";
@@ -71,6 +72,35 @@ export const presenters = [
     socialLinks: shimaaSocialLinks,
   },
 ];
+
+export const developerSocialLinks = [
+  {
+    label: "Facebook",
+    href: "https://www.facebook.com/",
+    icon: "simple-icons:facebook",
+  },
+  {
+    label: "Instagram",
+    href: "https://www.instagram.com/",
+    icon: "simple-icons:instagram",
+  },
+  {
+    label: "LinkedIn",
+    href: "https://www.linkedin.com/",
+    icon: "simple-icons:linkedin",
+  },
+  {
+    label: "GitHub",
+    href: "https://github.com/Elwasify",
+    icon: "simple-icons:github",
+  },
+];
+
+export const developer = {
+  name: "ENG. Abdallah Elwasify",
+  photo: abdallahElwasifyPortrait,
+  socialLinks: developerSocialLinks,
+};
 
 export const areas = [
   { icon: "Atom" },
