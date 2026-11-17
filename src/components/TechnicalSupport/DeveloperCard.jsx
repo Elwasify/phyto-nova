@@ -1,6 +1,6 @@
 import { Icon } from "@iconify/react";
 import styled from "styled-components";
-import photo from "../../assets/abdallah-upper-half.webp";
+import photo from "../../assets/FullSizeRender.jpeg";
 import { useLanguage } from "../../context/useLanguage";
 
 const socialLinks = [
@@ -96,7 +96,7 @@ const StyledWrapper = styled.div`
 
   .top-section {
     position: relative;
-    height: 310px;
+    height: 280px;
     overflow: hidden;
     border-radius: 13px;
     background: var(--color-surface-base);
@@ -109,7 +109,8 @@ const StyledWrapper = styled.div`
     height: 100%;
     border-radius: inherit;
     object-fit: cover;
-    object-position: center 14%;
+    object-position: center 55%;
+    transform: scale(1.55);
   }
 
   .bottom-section {
